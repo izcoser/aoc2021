@@ -1,13 +1,14 @@
 def has_all(a, b):
-    ''' Returns true if all characters of b are in a. '''
+    """Returns true if all characters of b are in a."""
     for c in b:
         if not (c in a):
             return False
     return True
 
+
 def patterns_to_numbers(patterns):
-    ''' Receives a list of strings encoding numbers from 0 to 9.
-        Returns a dictionary mapping each pattern to the corresponding int. '''
+    """Receives a list of strings encoding numbers from 0 to 9.
+    Returns a dictionary mapping each pattern to the corresponding int."""
 
     numbers = {}
     numbers[1] = [p for p in patterns if len(p) == 2].pop()
@@ -23,7 +24,9 @@ def patterns_to_numbers(patterns):
     numbers[3] = [p for p in patterns if len(p) == 5 and has_all(p, numbers[7])].pop()
     patterns.remove(numbers[3])
 
-    numbers[6] = [p for p in patterns if len(p) == 6 and not has_all(p, numbers[7])].pop()
+    numbers[6] = [
+        p for p in patterns if len(p) == 6 and not has_all(p, numbers[7])
+    ].pop()
     patterns.remove(numbers[6])
 
     numbers[9] = [p for p in patterns if len(p) == 6 and has_all(p, numbers[3])].pop()
@@ -35,21 +38,27 @@ def patterns_to_numbers(patterns):
     patterns.remove(numbers[5])
     numbers[2] = patterns.pop()
 
-    numbers = {v: k for k, v in numbers.items()} # invert..
+    numbers = {v: k for k, v in numbers.items()}  # invert..
 
     return numbers
 
-with open('input8', 'r') as f:
+
+with open("input8", "r") as f:
     lines = f.readlines()
 
 s = 0
 
 for line in lines:
-    patterns = [''.join(sorted(n)) for n in line.split('|')[0].strip().split()]
-    outputs = [''.join(sorted(n)) for n in line.split('|')[1].strip().split()]
+    patterns = ["".join(sorted(n)) for n in line.split("|")[0].strip().split()]
+    outputs = ["".join(sorted(n)) for n in line.split("|")[1].strip().split()]
     numbers = patterns_to_numbers(patterns)
     output_digits = [numbers[output] for output in outputs]
-    output_value = output_digits[0] * 1000 + output_digits[1] * 100 + output_digits[2] * 10 + output_digits[3]
+    output_value = (
+        output_digits[0] * 1000
+        + output_digits[1] * 100
+        + output_digits[2] * 10
+        + output_digits[3]
+    )
     s += output_value
 
 print(s)

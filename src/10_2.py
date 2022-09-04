@@ -1,11 +1,12 @@
 import sys
 
-values = {')': 1, ']': 2, '}': 3, '>': 4}
+values = {")": 1, "]": 2, "}": 3, ">": 4}
+
 
 def completion(line):
-    ''' Returns the completion of a line or'''
-    ''' '' if complete of corrupted. '''
-    symbols = {'(': ')', '[': ']', '{': '}', '<': '>'}
+    """Returns the completion of a line or"""
+    """ '' if complete of corrupted. """
+    symbols = {"(": ")", "[": "]", "{": "}", "<": ">"}
     stack = []
 
     for c in line.strip():
@@ -13,15 +14,16 @@ def completion(line):
             stack.append(c)
         else:
             p = stack.pop()
-            
-            if c != symbols[p]:
-                return ''
 
-    compl = ''
+            if c != symbols[p]:
+                return ""
+
+    compl = ""
     while len(stack) > 0:
         compl += symbols[stack.pop()]
-    
+
     return compl
+
 
 def score(compl):
     s = 0
@@ -29,6 +31,7 @@ def score(compl):
         s *= 5
         s += values[c]
     return s
+
 
 scores = []
 

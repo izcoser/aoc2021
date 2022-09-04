@@ -1,23 +1,24 @@
 def accumulate_input(line, a):
-    ''' Receives one line of input, increments numbers in the list.'''
+    """Receives one line of input, increments numbers in the list."""
     for i, c in enumerate(line):
         a[i] += int(c)
 
-def g(a):
-    ''' Receives list of numbers, turns each number into a 0 or 1.'''
-    ''' Parses binary string and returns int.'''
 
-    binary_output = [''] * 12
+def g(a):
+    """Receives list of numbers, turns each number into a 0 or 1."""
+    """ Parses binary string and returns int."""
+
+    binary_output = [""] * 12
     for i, n in enumerate(a):
         if n > 500:
-            binary_output[i] = '1'
+            binary_output[i] = "1"
         else:
-            binary_output[i] = '0'
+            binary_output[i] = "0"
 
-    return int(''.join(binary_output), 2)
+    return int("".join(binary_output), 2)
 
 
-with open('input3', 'r') as f:
+with open("input3", "r") as f:
     lines = f.read().splitlines()
 
 # Each line has 12 bits.
@@ -28,7 +29,7 @@ with open('input3', 'r') as f:
 a = [0] * 12
 
 
-#print(lines)
+# print(lines)
 for line in lines:
     print(line)
     accumulate_input(line, a)

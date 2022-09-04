@@ -1,5 +1,5 @@
-def get_board_score(board, n): # the score of the winning board
-                                # is the (sum of all unmarked numbers) * last number called
+def get_board_score(board, n):  # the score of the winning board
+    # is the (sum of all unmarked numbers) * last number called
     s = 0
     for line in board:
         for number, marked in line:
@@ -7,23 +7,26 @@ def get_board_score(board, n): # the score of the winning board
                 s += number
 
     return s * n
-    
 
-def mark_number(n, boards): # marks number n across all boards
+
+def mark_number(n, boards):  # marks number n across all boards
     for board in boards:
         for line in board:
             for i, (number, marked) in enumerate(line):
                 if number == n:
                     line[i] = (number, True)
 
-def get_column(board, n): # returns nth column of a board
+
+def get_column(board, n):  # returns nth column of a board
     return [line[n] for line in board]
 
-def check_winning_line(line): # check whether a line or column won
+
+def check_winning_line(line):  # check whether a line or column won
     for _, marked in line:
         if not marked:
             return False
     return True
+
 
 def check_win(board):
     for line in board:
@@ -36,9 +39,10 @@ def check_win(board):
 
     return False
 
+
 def read_board(f):
     board = []
-    s = f.readline() # eat one empty line
+    s = f.readline()  # eat one empty line
     if not s:
         return []
 
@@ -47,9 +51,10 @@ def read_board(f):
         board.append(numbers)
 
     return board
-    
-with open('input4', 'r') as f:
-    numbers = [int(n) for n in f.readline().strip().split(',')]
+
+
+with open("input4", "r") as f:
+    numbers = [int(n) for n in f.readline().strip().split(",")]
     boards = []
     board = read_board(f)
     while board != []:
@@ -77,7 +82,6 @@ while True:
 
     if len(boards) == len(already_won):
         break
-
 
 
 print(get_board_score(boards[last_board_to_win], last_number_for_last_board))

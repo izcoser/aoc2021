@@ -6,9 +6,10 @@ def count_1_4_7_8(output):
 
     return c
 
-with open('input8', 'r') as f:
+
+with open("input8", "r") as f:
     lines = f.readlines()
-    outputs = [line.split('|')[-1].strip() for line in lines]
+    outputs = [line.split("|")[-1].strip() for line in lines]
 
 c = 0
 

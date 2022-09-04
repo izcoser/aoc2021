@@ -1,5 +1,5 @@
 def pass_day(fish):
-    ''' Makes a one day progress in the fish array. '''
+    """Makes a one day progress in the fish array."""
     fish_copy = fish.copy()
 
     for i in range(7, -1, -1):
@@ -8,8 +8,9 @@ def pass_day(fish):
     fish[6] = (6, fish[6][1] + fish_copy[0][1])
     fish[8] = (8, fish_copy[0][1])
 
-with open('input6', 'r') as f:
-    numbers = [int(i) for i in f.readline().strip().split(',')]
+
+with open("input6", "r") as f:
+    numbers = [int(i) for i in f.readline().strip().split(",")]
 
 fish = [(i, 0) for i in range(9)]
 
