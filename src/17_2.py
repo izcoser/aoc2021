@@ -19,21 +19,19 @@ def in_target(px, py, x1, x2, y1, y2):
 
 def shoot(vx, vy, x1, x2, y1, y2):
     init_vx, init_vy = vx, vy
-    max_y = float("-INF")
     px, py = 0, 0
-    while px <= x2 and py >= y1:
+    while (px <= x2 and py >= y1):
         px, py, vx, vy = step(px, py, vx, vy)
-        max_y = max(max_y, py)
         if in_target(px, py, x1, x2, y1, y2):
             print(f"Hit target at {(px, py)}, initials {(init_vx, init_vy)}")
-            return max_y
-    return float("-INF")
+            return True
+    return False
 
 
 x1, x2, y1, y2 = [int(i) for i in re.findall("-?\d+", input())]
-max_y = float("-INF")
+cnt = 0
 for i in range(1000):
-    for j in range(1000):
-        max_y = max(max_y, shoot(i, j, x1, x2, y1, y2))
-
-print(max_y)
+    for j in range(-1000, 1000):
+        if shoot(i, j, x1, x2, y1, y2):
+            cnt += 1
+print(cnt)

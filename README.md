@@ -24,7 +24,7 @@ This repo contains my solutions for the [Advent of Code 2021](https://adventofco
 - [x] [14 - Extended Polymerization](https://adventofcode.com/2021/day/14)
 - [x] [15 - Chiton](https://adventofcode.com/2021/day/15)
 - [x] [16 - Packet Decoder](https://adventofcode.com/2021/day/16)
-- [ ] [17 - Trick Shot](https://adventofcode.com/2021/day/17)
+- [x] [17 - Trick Shot](https://adventofcode.com/2021/day/17)
 - [ ] [18 - Snailfish](https://adventofcode.com/2021/day/18)
 - [ ] [19 - Beacon Scanner](https://adventofcode.com/2021/day/19)
 - [ ] [20 - Trench Map](https://adventofcode.com/2021/day/20)
