@@ -6,7 +6,7 @@ Advent of Code is a yearly Advent calendar of small programming puzzles for a va
 
 This repo contains my solutions for the [Advent of Code 2021](https://adventofcode.com/2021). :)
 
-## Problems solved: 16/25
+## Problems solved: 17/25
 
 - [x] [01 - Sonar Sweep](https://adventofcode.com/2021/day/1)
 - [x] [02 - Dive!](https://adventofcode.com/2021/day/2)
