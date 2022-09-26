@@ -6,7 +6,7 @@ Advent of Code is a yearly Advent calendar of small programming puzzles for a va
 
 This repo contains my solutions for the [Advent of Code 2021](https://adventofcode.com/2021). :)
 
-## Problems solved: 15/25
+## Problems solved: 16/25
 
 - [x] [01 - Sonar Sweep](https://adventofcode.com/2021/day/1)
 - [x] [02 - Dive!](https://adventofcode.com/2021/day/2)
@@ -23,7 +23,7 @@ This repo contains my solutions for the [Advent of Code 2021](https://adventofco
 - [x] [13 - Transparent Origami](https://adventofcode.com/2021/day/13)
 - [x] [14 - Extended Polymerization](https://adventofcode.com/2021/day/14)
 - [x] [15 - Chiton](https://adventofcode.com/2021/day/15)
-- [ ] [16 - Packet Decoder](https://adventofcode.com/2021/day/16)
+- [x] [16 - Packet Decoder](https://adventofcode.com/2021/day/16)
 - [ ] [17 - Trick Shot](https://adventofcode.com/2021/day/17)
 - [ ] [18 - Snailfish](https://adventofcode.com/2021/day/18)
 - [ ] [19 - Beacon Scanner](https://adventofcode.com/2021/day/19)
